@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="movieplug">
+
+<head>
+    <meta charset="utf-8">
+    <title>Movie Data Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body ng-controller="film_id">
+
+    <!-- START HEADER -->
+    <section id="header">
+        <div class="container-fluid header">
+            <header>
+                <!-- HEADLINE -->
+                <h1 class="text-center">
+                  <b>
+                      Sci-Fi</b> <br>
+                    Movies
+                  </h1>
+            </header>
+
+            <!-- SEARCHBAR  -->
+            <div class="row">
+                <div class="col-md-6 col-sm-offset-3">
+                    <form class="form1">
+                        <input class="input1" type="text" placeholder="search by name" ng-model="query.original_title">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRILLE -->
+        <div class="container-fluid films-display">
+
+            <!-- MOVIES INFO  -->
+            <div id="info-div" class="col-md-6 col-sm-7 col-xs-10 info-div">
+                <span class="bye">X</span>
+                <div class="row">
+
+                    <div class="col-xs-6">
+
+                        <div class="row">
+                            <h4 class="col-md-9 title-movie">{{title}}</h4>
+                            <p class="col-md-3 vote-rating"> <span class="glyphicon glyphicon-star"></span> {{vote}}</p>
+
+                                <p class="col-md-12">Release date : {{date}}</p>
+
+                        </div>
+
+                        <div class="row overview">
+                            <p class="col-md-12">{{overview}}</p>
+                            <a class="trailer col-md-12" href="https://www.youtube.com/watch?v={{videoId}}&amp;autoplay=1">Trailer {{title}}</a>
+                        </div>
+
+
+                    </div>
+
+                    <div class="img-poster col-xs-6">
+                        <img src="{{img}}" />
+                    </div>
+
+                </div>
+                <!-- END BIG ROW-->
+            </div>
+            <!-- END INFO DIV-->
+
+            <!-- GRILLE MOVIES-->
+            <div>
+                <img class="img-films" src="https://image.tmdb.org/t/p/w640{{i.poster_path}}" ng-repeat="i in film_list | filter:query" ng-click="show_infos(i)" />
+            </div>
+
+        </div>
+        <!-- END container fluid  -->
+
+    <div class="cover">
+
+    </div>
+
+  </section>
+  <!-- END SECTION/PAGE -->
+    <footer>
+        <p>
+            <a href="https://github.com/eukavlin/movie-data"><i class="devicon-github-plain"></i></a> Copyright 2017 MOVIE-DATA Inc.
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+    <script src="js/film_id.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+</body>
+
+</html>

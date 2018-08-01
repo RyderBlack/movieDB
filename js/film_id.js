@@ -26,7 +26,7 @@ app.controller('film_id', function($scope, $http) {
         $scope.title = i.original_title;
         $scope.overview = i.overview;
         $scope.date = i.release_date;
-        $scope.img = "https://image.tmdb.org/t/p/w640" + i.poster_path;
+        $scope.img = "https://image.tmdb.org/t/p/w500" + i.poster_path;
         $scope.vote = i.vote_average;
         console.log($scope.img);
 

@@ -7,5 +7,5 @@ This project will be an interactive web site for searching Sci-fi movies. also, 
 
 
 <p align="center"><strong>[HOME]</strong></p>
-<img src="./screenshots/home-image.png" />
+<img src="./screenshots/home.png" />
 
